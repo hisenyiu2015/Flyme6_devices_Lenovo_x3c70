@@ -1787,8 +1787,25 @@
 
     move-result v18
 
-    .line 1514
     .local v18, "result":I
+    move-object/from16 v10, p0
+
+    move-object/from16 v11, p1
+
+    move-object/from16 v12, p2
+
+    move-object/from16 v13, p3
+
+    move-object/from16 v14, p4
+
+    move-object/from16 v15, p5
+
+    move/from16 v16, p6
+
+    move-object/from16 v17, p7
+
+    invoke-direct/range {v10 .. v18}, Landroid/app/Instrumentation;->startFlymeRecommendActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;I)V
+
     move/from16 v0, v18
 
     move-object/from16 v1, p5
@@ -1797,12 +1814,10 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1518
     const/4 v2, 0x0
 
     goto :goto_3
 
-    .line 1504
     .end local v18    # "result":I
     :catchall_0
     move-exception v2
@@ -1814,17 +1829,14 @@
 
     throw v2
 
-    .line 1509
     :cond_6
     const/4 v8, 0x0
 
     goto :goto_4
 
-    .line 1515
     :catch_0
     move-exception v15
 
-    .line 1516
     .local v15, "e":Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -1847,7 +1859,6 @@
     .param p8, "user"    # Landroid/os/UserHandle;
 
     .prologue
-    .line 1671
     const/16 v2, 0x179
 
     invoke-virtual/range {p5 .. p5}, Landroid/content/Intent;->toString()Ljava/lang/String;
@@ -1858,10 +1869,8 @@
 
     move-object/from16 v3, p2
 
-    .line 1672
     check-cast v3, Landroid/app/IApplicationThread;
 
-    .line 1673
     .local v3, "whoThread":Landroid/app/IApplicationThread;
     move-object/from16 v0, p0
 
@@ -1869,14 +1878,12 @@
 
     if-eqz v2, :cond_3
 
-    .line 1674
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/app/Instrumentation;->mSync:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 1675
     :try_start_0
     move-object/from16 v0, p0
 
@@ -1886,7 +1893,6 @@
 
     move-result v14
 
-    .line 1676
     .local v14, "N":I
     const/16 v17, 0x0
 
@@ -1896,7 +1902,6 @@
 
     if-ge v0, v14, :cond_2
 
-    .line 1677
     move-object/from16 v0, p0
 
     iget-object v2, v0, Landroid/app/Instrumentation;->mActivityMonitors:Ljava/util/List;
@@ -1909,7 +1914,6 @@
 
     check-cast v15, Landroid/app/Instrumentation$ActivityMonitor;
 
-    .line 1678
     .local v15, "am":Landroid/app/Instrumentation$ActivityMonitor;
     const/4 v2, 0x0
 
@@ -1923,21 +1927,18 @@
 
     if-eqz v2, :cond_1
 
-    .line 1679
     iget v2, v15, Landroid/app/Instrumentation$ActivityMonitor;->mHits:I
 
     add-int/lit8 v2, v2, 0x1
 
     iput v2, v15, Landroid/app/Instrumentation$ActivityMonitor;->mHits:I
 
-    .line 1680
     invoke-virtual {v15}, Landroid/app/Instrumentation$ActivityMonitor;->isBlocking()Z
 
     move-result v2
 
     if-eqz v2, :cond_2
 
-    .line 1681
     if-ltz p6, :cond_0
 
     invoke-virtual {v15}, Landroid/app/Instrumentation$ActivityMonitor;->getResult()Landroid/app/Instrumentation$ActivityResult;
@@ -1947,14 +1948,12 @@
     :goto_1
     monitor-exit v4
 
-    .line 1700
     .end local v14    # "N":I
     .end local v15    # "am":Landroid/app/Instrumentation$ActivityMonitor;
     .end local v17    # "i":I
     :goto_2
     return-object v2
 
-    .line 1681
     .restart local v14    # "N":I
     .restart local v15    # "am":Landroid/app/Instrumentation$ActivityMonitor;
     .restart local v17    # "i":I
@@ -1963,30 +1962,25 @@
 
     goto :goto_1
 
-    .line 1676
     :cond_1
     add-int/lit8 v17, v17, 0x1
 
     goto :goto_0
 
-    .line 1686
     .end local v15    # "am":Landroid/app/Instrumentation$ActivityMonitor;
     :cond_2
     monitor-exit v4
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1689
     .end local v14    # "N":I
     .end local v17    # "i":I
     :cond_3
     :try_start_1
     invoke-virtual/range {p5 .. p5}, Landroid/content/Intent;->migrateExtraStreamToClipData()Z
 
-    .line 1690
     invoke-virtual/range {p5 .. p5}, Landroid/content/Intent;->prepareToLeaveProcess()V
 
-    .line 1691
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
     move-result-object v2
@@ -2032,7 +2026,7 @@
 
     move-result v18
 
-    .line 1696
+    .line 1514
     .local v18, "result":I
     move/from16 v0, v18
 
@@ -2042,12 +2036,10 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 1700
     const/4 v2, 0x0
 
     goto :goto_2
 
-    .line 1686
     .end local v18    # "result":I
     :catchall_0
     move-exception v2
@@ -2059,17 +2051,14 @@
 
     throw v2
 
-    .line 1691
     :cond_4
     const/4 v8, 0x0
 
     goto :goto_3
 
-    .line 1697
     :catch_0
     move-exception v16
 
-    .line 1698
     .local v16, "e":Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -2093,7 +2082,7 @@
     .param p7, "options"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1610
+    .line 1671
     const/16 v2, 0x179
 
     invoke-virtual/range {p5 .. p5}, Landroid/content/Intent;->toString()Ljava/lang/String;
@@ -2104,10 +2093,10 @@
 
     move-object/from16 v3, p2
 
-    .line 1611
+    .line 1672
     check-cast v3, Landroid/app/IApplicationThread;
 
-    .line 1612
+    .line 1673
     .local v3, "whoThread":Landroid/app/IApplicationThread;
     move-object/from16 v0, p0
 
@@ -2115,14 +2104,14 @@
 
     if-eqz v2, :cond_3
 
-    .line 1613
+    .line 1674
     move-object/from16 v0, p0
 
     iget-object v4, v0, Landroid/app/Instrumentation;->mSync:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 1614
+    .line 1675
     :try_start_0
     move-object/from16 v0, p0
 
@@ -2132,7 +2121,6 @@
 
     move-result v13
 
-    .line 1615
     .local v13, "N":I
     const/16 v16, 0x0
 
@@ -2142,6 +2130,7 @@
 
     if-ge v0, v13, :cond_2
 
+    .line 1677
     .line 1616
     move-object/from16 v0, p0
 
@@ -4448,4 +4437,50 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+
+.method private startFlymeRecommendActivity(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;I)V
+    .locals 9
+    .param p1, "who"    # Landroid/content/Context;
+    .param p2, "contextThread"    # Landroid/os/IBinder;
+    .param p3, "token"    # Landroid/os/IBinder;
+    .param p4, "target"    # Landroid/app/Activity;
+    .param p5, "intent"    # Landroid/content/Intent;
+    .param p6, "requestCode"    # I
+    .param p7, "options"    # Landroid/os/Bundle;
+    .param p8, "result"    # I
+
+    .prologue
+    if-ltz p8, :cond_0
+
+    return-void
+
+    :cond_0
+    new-instance v1, Landroid/app/Instrumentation$FlymeRecommendActivity;
+
+    move-object v2, p1
+
+    move-object v3, p2
+
+    move-object v4, p3
+
+    move-object v5, p4
+
+    move-object v6, p5
+
+    move v7, p6
+
+    move-object/from16 v8, p7
+
+    invoke-direct/range {v1 .. v8}, Landroid/app/Instrumentation$FlymeRecommendActivity;-><init>(Landroid/content/Context;Landroid/os/IBinder;Landroid/os/IBinder;Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
+
+    .local v1, "recommendActivity":Landroid/app/Instrumentation$FlymeRecommendActivity;
+    if-eqz v1, :cond_1
+
+    move/from16 v0, p8
+
+    invoke-virtual {v1, v0}, Landroid/app/Instrumentation$FlymeRecommendActivity;->start(I)V
+
+    :cond_1
+    return-void
 .end method

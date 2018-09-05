@@ -205,6 +205,10 @@
 
     .line 2253
     :cond_2
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService$8;->setFlymeNotification()Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
+
+    move-result-object v12
+
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/notification/NotificationManagerService$8;->val$notification:Landroid/app/Notification;
@@ -253,6 +257,13 @@
 
     .line 2259
     .local v2, "n":Landroid/service/notification/StatusBarNotification;
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/notification/NotificationManagerService$8;->this$0:Lcom/android/server/notification/NotificationManagerService;
+
+    invoke-virtual {v3, v2, v12}, Lcom/android/server/notification/NotificationManagerService;->setFlymeNotificationFilter(Landroid/service/notification/StatusBarNotification;Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;)V
+
     new-instance v22, Lcom/android/server/notification/NotificationRecord;
 
     move-object/from16 v0, v22
@@ -461,21 +472,18 @@
 
     if-nez v3, :cond_9
 
-    .line 2297
     move-object/from16 v0, p0
 
     iget-boolean v3, v0, Lcom/android/server/notification/NotificationManagerService$8;->val$isSystemNotification:Z
 
     if-nez v3, :cond_9
 
-    .line 2305
     const/16 v3, -0x14
 
     move-object/from16 v0, v22
 
     iput v3, v0, Lcom/android/server/notification/NotificationRecord;->score:I
 
-    .line 2306
     const-string v3, "LenovoNotificationManager"
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -600,6 +608,14 @@
     move-object/from16 v0, v22
 
     invoke-virtual {v3, v0}, Lcom/android/server/notification/NotificationUsageStats;->registerPostedByApp(Lcom/android/server/notification/NotificationRecord;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/notification/NotificationManagerService$8;->this$0:Lcom/android/server/notification/NotificationManagerService;
+
+    move-object/from16 v0, v22
+
+    invoke-virtual {v3, v0}, Lcom/android/server/notification/NotificationManagerService;->addFlymePackageSendNumber(Lcom/android/server/notification/NotificationRecord;)V
 
     .line 2337
     :goto_2
@@ -882,4 +898,33 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     goto/16 :goto_4
+.end method
+
+.method private setFlymeNotification()Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
+    .locals 9
+
+    .prologue
+    iget-object v0, p0, Lcom/android/server/notification/NotificationManagerService$8;->this$0:Lcom/android/server/notification/NotificationManagerService;
+
+    iget-object v1, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$pkg:Ljava/lang/String;
+
+    iget-object v2, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$opPkg:Ljava/lang/String;
+
+    iget v3, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$callingUid:I
+
+    iget v4, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$callingPid:I
+
+    iget-object v5, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$tag:Ljava/lang/String;
+
+    iget v6, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$id:I
+
+    iget-object v7, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$notification:Landroid/app/Notification;
+
+    iget-object v8, p0, Lcom/android/server/notification/NotificationManagerService$8;->val$user:Landroid/os/UserHandle;
+
+    invoke-virtual/range {v0 .. v8}, Lcom/android/server/notification/NotificationManagerService;->setFlymeNotification(Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;ILandroid/app/Notification;Landroid/os/UserHandle;)Landroid/service/notification/StatusBarNotification$FlymeNotificationFilter;
+
+    move-result-object v0
+
+    return-object v0
 .end method

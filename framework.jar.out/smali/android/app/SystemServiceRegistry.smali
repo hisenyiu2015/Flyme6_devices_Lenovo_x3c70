@@ -821,7 +821,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/app/SystemServiceRegistry;->registerService(Ljava/lang/String;Ljava/lang/Class;Landroid/app/SystemServiceRegistry$ServiceFetcher;)V
 
-    .line 712
     const-string v0, "display_effect"
 
     const-class v1, Landroid/app/DisplayEffectManager;
@@ -832,7 +831,6 @@
 
     invoke-static {v0, v1, v2}, Landroid/app/SystemServiceRegistry;->registerService(Ljava/lang/String;Ljava/lang/Class;Landroid/app/SystemServiceRegistry$ServiceFetcher;)V
 
-    .line 718
     return-void
 .end method
 
@@ -840,9 +838,9 @@
     .locals 0
 
     .prologue
-    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 718
     return-void
 .end method
 
@@ -959,5 +957,25 @@
     invoke-virtual {v0, p0, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 750
+    return-void
+.end method
+
+.method private static registerFlymeExtraManager()V
+    .locals 3
+
+    .prologue
+    new-instance v0, Landroid/app/SystemServiceRegistry$FlymeAccessControlServiceFetcher;
+
+    const/4 v1, 0x0
+
+    invoke-direct {v0, v1}, Landroid/app/SystemServiceRegistry$FlymeAccessControlServiceFetcher;-><init>(Landroid/app/SystemServiceRegistry$FlymeAccessControlServiceFetcher;)V
+
+    .local v0, "accessControlServiceFetcher":Landroid/app/SystemServiceRegistry$FlymeAccessControlServiceFetcher;
+    const-string v1, "access_control"
+
+    const-class v2, Lmeizu/security/AccessControlManager;
+
+    invoke-static {v1, v2, v0}, Landroid/app/SystemServiceRegistry;->registerService(Ljava/lang/String;Ljava/lang/Class;Landroid/app/SystemServiceRegistry$ServiceFetcher;)V
+
     return-void
 .end method

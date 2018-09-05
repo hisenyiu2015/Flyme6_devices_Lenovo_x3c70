@@ -295,6 +295,8 @@
 
     iput-object v0, p0, Landroid/service/wallpaper/WallpaperService$Engine;->mDisplayListener:Landroid/hardware/display/DisplayManager$DisplayListener;
 
+    invoke-direct/range {p0 .. p0}, Landroid/service/wallpaper/WallpaperService$Engine;->initFlymeExtraFields()V
+
     return-void
 .end method
 
@@ -2229,7 +2231,7 @@
 
     iget-object v2, v0, Landroid/service/wallpaper/WallpaperService$Engine;->mLayout:Landroid/view/WindowManager$LayoutParams;
 
-    const v3, 0x10302ea
+    const v3, #android:style@Animation.Wallpaper#t
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 
@@ -3668,4 +3670,17 @@
     throw v2
     :try_end_2
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
+.end method
+
+.method private initFlymeExtraFields()V
+    .locals 1
+
+    .prologue
+    const/high16 v0, 0x3f000000    # 0.5f
+
+    iput v0, p0, Landroid/service/wallpaper/WallpaperService$Engine;->mPendingXOffset:F
+
+    iput v0, p0, Landroid/service/wallpaper/WallpaperService$Engine;->mPendingYOffset:F
+
+    return-void
 .end method

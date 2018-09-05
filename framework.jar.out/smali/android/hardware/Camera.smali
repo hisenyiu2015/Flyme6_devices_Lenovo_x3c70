@@ -990,18 +990,27 @@
     .locals 4
 
     .prologue
-    .line 370
+    invoke-static {}, Landroid/hardware/Camera;->isFlymePermissionGranted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_flyme_0
+
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v2
 
-    .line 371
     .local v2, "numberOfCameras":I
     new-instance v0, Landroid/hardware/Camera$CameraInfo;
 
     invoke-direct {v0}, Landroid/hardware/Camera$CameraInfo;-><init>()V
 
-    .line 372
     .local v0, "cameraInfo":Landroid/hardware/Camera$CameraInfo;
     const/4 v1, 0x0
 
@@ -1044,7 +1053,18 @@
     .param p0, "cameraId"    # I
 
     .prologue
-    .line 360
+    invoke-static {}, Landroid/hardware/Camera;->isFlymePermissionGranted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_flyme_0
+
     new-instance v0, Landroid/hardware/Camera;
 
     invoke-direct {v0, p0}, Landroid/hardware/Camera;-><init>(I)V
@@ -1058,12 +1078,10 @@
     .param p1, "halVersion"    # I
 
     .prologue
-    .line 420
     const/16 v0, 0x100
 
     if-ge p1, v0, :cond_0
 
-    .line 421
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1088,7 +1106,6 @@
 
     throw v0
 
-    .line 424
     :cond_0
     new-instance v0, Landroid/hardware/Camera;
 
@@ -1101,7 +1118,7 @@
     .locals 1
 
     .prologue
-    .line 540
+    .line 360
     new-instance v0, Landroid/hardware/Camera;
 
     invoke-direct {v0}, Landroid/hardware/Camera;-><init>()V
@@ -1118,7 +1135,6 @@
     .param p4, "obj"    # Ljava/lang/Object;
 
     .prologue
-    .line 1208
     check-cast p0, Ljava/lang/ref/WeakReference;
 
     .end local p0    # "camera_ref":Ljava/lang/Object;
@@ -1128,29 +1144,25 @@
 
     check-cast v0, Landroid/hardware/Camera;
 
-    .line 1209
     .local v0, "c":Landroid/hardware/Camera;
     if-nez v0, :cond_1
 
-    .line 1216
+    .line 424
     :cond_0
     :goto_0
     return-void
 
-    .line 1212
     :cond_1
     iget-object v2, v0, Landroid/hardware/Camera;->mEventHandler:Landroid/hardware/Camera$EventHandler;
 
     if-eqz v2, :cond_0
 
-    .line 1213
     iget-object v2, v0, Landroid/hardware/Camera;->mEventHandler:Landroid/hardware/Camera$EventHandler;
 
     invoke-virtual {v2, p1, p2, p3, p4}, Landroid/hardware/Camera$EventHandler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v1
 
-    .line 1214
     .local v1, "m":Landroid/os/Message;
     iget-object v2, v0, Landroid/hardware/Camera;->mEventHandler:Landroid/hardware/Camera$EventHandler;
 
@@ -2421,4 +2433,27 @@
 .end method
 
 .method public final native unlock()V
+.end method
+
+.method private static isFlymePermissionGranted()Z
+    .locals 1
+
+    .prologue
+    const/16 v0, 0x4c
+
+    invoke-static {v0}, Lmeizu/security/FlymePermissionManager;->isFlymePermissionGranted(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x1
+
+    goto :goto_0
 .end method

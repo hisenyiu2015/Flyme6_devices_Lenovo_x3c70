@@ -417,7 +417,7 @@
 
     move-result-object v2
 
-    const v3, 0x10405a0
+    const v3, #android:string@zen_mode_default_events_name#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -503,7 +503,7 @@
 
     move-result-object v4
 
-    const v5, 0x104059e
+    const v5, #android:string@zen_mode_default_weeknights_name#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -572,7 +572,7 @@
 
     move-result-object v4
 
-    const v5, 0x104059f
+    const v5, #android:string@zen_mode_default_weekends_name#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -1384,7 +1384,7 @@
 
     .line 484
     .local v2, "parser":Landroid/content/res/XmlResourceParser;
-    const v3, 0x1110004
+    const v3, #android:xml@default_zen_mode_config#t
 
     :try_start_0
     invoke-virtual {p1, v3}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
@@ -2303,26 +2303,24 @@
 
     iput-object v0, p0, Lcom/android/server/notification/ZenModeHelper;->mAudioManager:Landroid/media/AudioManagerInternal;
 
-    .line 148
     iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper;->mAudioManager:Landroid/media/AudioManagerInternal;
 
     if-eqz v0, :cond_1
 
-    .line 149
     iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper;->mAudioManager:Landroid/media/AudioManagerInternal;
 
     iget-object v1, p0, Lcom/android/server/notification/ZenModeHelper;->mRingerModeDelegate:Lcom/android/server/notification/ZenModeHelper$RingerModeDelegate;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManagerInternal;->setRingerModeDelegate(Landroid/media/AudioManagerInternal$RingerModeDelegate;)V
 
-    .line 151
     :cond_1
     iget-object v0, p0, Lcom/android/server/notification/ZenModeHelper;->mHandler:Lcom/android/server/notification/ZenModeHelper$H;
 
     # invokes: Lcom/android/server/notification/ZenModeHelper$H;->postMetricsTimer()V
     invoke-static {v0}, Lcom/android/server/notification/ZenModeHelper$H;->access$300(Lcom/android/server/notification/ZenModeHelper$H;)V
 
-    .line 152
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/notification/ZenModeHelper;->initFlymeDoNotDisturbHelper()V
+
     return-void
 .end method
 
@@ -2874,5 +2872,18 @@
 
     .line 293
     :cond_1
+    return-void
+.end method
+
+.method private initFlymeDoNotDisturbHelper()V
+    .locals 2
+
+    .prologue
+    new-instance v0, Lcom/android/server/notification/MzDoNotDisturbHelper;
+
+    iget-object v1, p0, Lcom/android/server/notification/ZenModeHelper;->mContext:Landroid/content/Context;
+
+    invoke-direct {v0, v1}, Lcom/android/server/notification/MzDoNotDisturbHelper;-><init>(Landroid/content/Context;)V
+
     return-void
 .end method
