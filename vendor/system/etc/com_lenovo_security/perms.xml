@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+     <!-- 
+     主题中心
+      -->
+     <package name="com.lenovo.themecenter">
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>          
+     </package>
+     <!-- 
+     文件管家
+     -->
+     <package name="com.lenovo.FileBrowser">
+         <permission name="android.permission.GET_ACCOUNTS"/>
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package>
+     <!-- 
+     一键反馈
+     -->
+     <package name="com.lenovo.lenovofb">
+         <permission name="android.permission.GET_ACCOUNTS"/>
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+     </package> 
+     <!-- 
+     联想钱包
+     -->
+     <package name="com.lenovo.wallet">
+         <permission name="android.permission.GET_ACCOUNTS"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+     </package> 
+     <!-- 
+     奇艺视频
+     -->
+     <package name="com.lenovo.video">
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+     </package> 
+    <!-- 
+    视频播放器插件
+     -->
+    <package name="com.qiyi.video.lenovo">
+         <permission name="android.permission.READ_PHONE_STATE"/>
+    </package>
+     <!-- 
+     电台
+     -->
+     <package name="com.lenovo.fm">
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+     </package> 
+     <!-- 
+     阅读
+     -->
+     <package name="com.lenovo.reader">
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+     </package> 
+     <!-- 
+     联想Life
+     -->
+     <package name="com.lenovo.life">
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>  
+     </package> 
+     <!-- 
+     联想通讯录
+     -->
+     <package name="com.lenovo.ideafriend">
+        <permission name="android.permission.READ_CALENDAR"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package> 
+     <!-- 
+     桌面
+     -->
+     <package name="com.lenovo.launcher">
+         <permission name="android.permission.GET_ACCOUNTS"/>
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_SMS"/>
+         <permission name="android.permission.RECEIVE_SMS"/>
+         <permission name="android.permission.READ_CALL_LOG"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package> 
+     <!-- 
+     杂志锁屏
+     -->
+     <package name="com.lenovo.keyguard.magazine.setting">
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package> 
+     <!-- 
+     日历
+     -->
+     <package name="com.lenovo.calendar">
+         <permission name="android.permission.GET_ACCOUNTS"/>
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_CALENDAR"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_CALENDAR"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
+     </package>  
+     <!-- 
+     clock
+     -->
+     <package name="com.lenovo.deskclock">
+         <permission name="android.permission.READ_PHONE_STATE"/>
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
+     </package>  
+     <!-- 
+     notepad
+     -->
+     <package name="com.lenovo.notepad">
+         <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/> 
+     </package>  
+     <!-- 
+     BU相册
+     -->
+     <package name="com.lenovo.gallery">
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package>  
+     <!-- 
+     录音机
+     -->
+     <package name="com.lenovo.recorder">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package>  
+      <!-- 
+      email
+      -->
+     <package name="com.lenovo.email">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_CALENDAR"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>   
+        <permission name="android.permission.WRITE_CALENDAR"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package> 
+      <!-- 
+      office
+      -->
+     <package name="com.lenovo.office">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package> 
+     <!-- 
+     sogouo输入法
+     -->
+     <package name="com.sohu.inputmethod.sogouoem">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_CONTACTS"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/> 
+        <permission name="android.permission.RECORD_AUDIO"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package>  
+     <!-- 
+     Browser
+     -->
+     <package name="com.lenovo.browser">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package>  
+     <!-- 
+     Music
+     -->
+     <package name="com.lenovo.music">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+     </package>  
+     <!-- 
+     VIBEUI服务
+     -->
+     <package name="com.lenovo.updateassist">
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" show="true"/>
+        <permission name="android.permission.ACCESS_FINE_LOCATION" show="true"/>
+        <permission name="android.permission.READ_CONTACTS" show="true"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE" show="true"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" show="true"/>
+     </package>   
+     <!-- 
+     黄页provider
+     -->
+     <package name="com.lenovo.ypprovider">
+         <permission name="android.permission.READ_PHONE_STATE" show="true"/> 
+         <permission name="android.permission.READ_EXTERNAL_STORAGE" show="true"/>
+         <permission name="android.permission.WRITE_EXTERNAL_STORAGE" show="true"/>
+     </package> 
+     <!-- 
+     私密联系人Provider
+     -->
+     <package name="com.lenovo.pnprovider">
+            <permission name="android.permission.READ_CALL_LOG" show="true"/> 
+            <permission name="android.permission.READ_CONTACTS" show="true"/>
+            <permission name="android.permission.WRITE_CALL_LOG" show="true"/>
+            <permission name="android.permission.WRITE_CONTACTS" show="true"/>
+     </package>      
+       <!-- 
+     sim卡联系人管理
+      -->
+     <package name="com.lenovo.lenovosimcontact">
+          <permission name="android.permission.READ_CONTACTS" show="true"/>
+          <permission name="android.permission.WRITE_CONTACTS" show="true"/>
+     </package>
+    <!-- 
+    location
+     -->
+    <package name="com.amap.android.location">
+        <permission name="android.permission.ACCESS_COARSE_LOCATION" show="true"/>
+	    <permission name="android.permission.ACCESS_FINE_LOCATION" show="true"/>
+	    <permission name="android.permission.READ_EXTERNAL_STORAGE" show="true"/>
+	    <permission name="android.permission.WRITE_EXTERNAL_STORAGE" show="true"/>
+	    <permission name="android.permission.READ_PHONE_STATE" show="true"/> 
+    </package>
+    <!-- 
+    应用中心
+     -->
+    <package name="com.lenovo.leos.appstore">
+        <permission name="android.permission.GET_ACCOUNTS"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    </package>
+    <!-- 
+    云服务
+     -->
+    <package name="com.lenovo.mbg.cloud.sync">
+        <permission name="android.permission.GET_ACCOUNTS"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_CALENDAR"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_CALENDAR"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    </package>
+    <!-- 
+    乐语音
+     -->
+    <package name="com.lenovo.menu_assistant">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.READ_CALENDAR"/>
+        <permission name="android.permission.READ_EXTERNAL_STORAGE"/>
+        <permission name="android.permission.WRITE_CALENDAR"/>
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE"/>        
+    </package>
+    <!-- 
+    keyguard settings
+     -->
+    <package name="com.lenovo.keyguard.settings"/>    
+    <package name="com.lenovo.compass"/>   
+    <package name="com.lenovo.lsf"/>  
+</permissions>

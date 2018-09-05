@@ -1,0 +1,21 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.secure=1
+ro.allow.mock.location=0
+ro.debuggable=0
+ro.adb.secure=1
+ro.zygote=zygote64_32
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+ro.dalvik.vm.native.bridge=0
+debug.atrace.tags.enableflags=0
+persist.sys.usb.config=mtp
+#
+# BOOTIMAGE_BUILD_PROPERTIES
+#
+ro.bootimage.build.date=Tue Jun 21 05:55:17 CST 2016
+ro.bootimage.build.date.utc=1466459717
+ro.bootimage.build.fingerprint=Lenovo/X3c70/X3c70:6.0.1/MMB29M/VIBEUI_V3.1_1626_5.611.1_ST_X3c70:user/release-keys
