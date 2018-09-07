@@ -3095,9 +3095,9 @@
     .line 1430
     :cond_0
 
-    invoke-static {p0, v10}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->onWindowFocus(Landroid/view/inputmethod/InputMethodManager;Z)Z
+    invoke-static {p0, v8}, Landroid/view/inputmethod/InputMethodManager$FlymeInjector;->onWindowFocus(Landroid/view/inputmethod/InputMethodManager;Z)Z
 
-    move-result v10
+    move-result v8
 
     if-eqz p2, :cond_3
 
