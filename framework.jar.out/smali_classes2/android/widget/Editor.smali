@@ -6,6 +6,11 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/Editor$OptionWrapper;,
+        Landroid/widget/Editor$FlymeInjector;,
+        Landroid/widget/Editor$FlymeStartSelectionActionModeRunnable;,
+        Landroid/widget/Editor$FlymeShowSuggestionsRunnable;,
+        Landroid/widget/Editor$FlymeInsertionPointCursorController;,
         Landroid/widget/Editor$ProcessTextIntentActionsHandler;,
         Landroid/widget/Editor$EditOperation;,
         Landroid/widget/Editor$UndoInputFilter;,

@@ -10259,6 +10259,16 @@
     invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_2
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/LocationManagerService;->isFlymePermissionGranted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    goto :goto_0
+
+    :cond_flyme_0
+
     invoke-static {}, Landroid/os/Binder;->getCallingUid()I
 
     move-result v5
@@ -10420,6 +10430,16 @@
     return-void
 
     :cond_3
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/LocationManagerService;->isFlymePermissionGranted()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    goto :goto_0
+
+    :cond_flyme_0
+
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v12

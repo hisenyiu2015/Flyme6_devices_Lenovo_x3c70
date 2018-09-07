@@ -770,7 +770,7 @@
     monitor-enter v1
 
     :try_start_3
-    invoke-direct {p0, p1}, Lcom/android/server/InputMethodManagerService;->resetDefaultImeLocked(Landroid/content/Context;)V
+    invoke-virtual {p0, p1}, Lcom/android/server/InputMethodManagerService;->resetDefaultImeLocked(Landroid/content/Context;)V
 
     monitor-exit v1
     :try_end_3
@@ -2410,7 +2410,7 @@
     goto :goto_1
 .end method
 
-.method private resetDefaultImeLocked(Landroid/content/Context;)V
+.method protected resetDefaultImeLocked(Landroid/content/Context;)V
     .locals 9
     .param p1, "context"    # Landroid/content/Context;
 
@@ -4670,6 +4670,9 @@
     .end local v4    # "summary":Ljava/lang/CharSequence;
     .end local v5    # "title":Ljava/lang/CharSequence;
     :cond_3
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->showFlymeImeSwitcherNotificationIfNeeded()V
+    
+    :cond_flyme_0
     :goto_1
     invoke-static {v0, v1}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 

@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field public mInSelectionMode:Z
+
 .field private final TRANSLATION_INTENT_ACTION:Ljava/lang/String;
 
 .field private final TRANSLATION_INTENT_EXTRA_KEY:Ljava/lang/String;

@@ -13,6 +13,10 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/AbsListView$FlymeInjector;,
+        Landroid/widget/AbsListView$OnItemDragListener;,
+        Landroid/widget/AbsListView$onTouchOutOfItemListener;,
+        Landroid/widget/AbsListView$HoldView;,
         Landroid/widget/AbsListView$PositionScroller;,
         Landroid/widget/AbsListView$AbsPositionScroller;,
         Landroid/widget/AbsListView$RecycleBin;,
@@ -1570,6 +1574,12 @@
 
     .line 1236
     :cond_2
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->flymeContentFits(Landroid/widget/AbsListView;)Z
+
+    move-result v3
+
+    return v3
+
     invoke-virtual {p0, v2}, Landroid/widget/AbsListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -9751,6 +9761,8 @@
 
     invoke-virtual {v3}, Landroid/view/View;->dispatchFinishTemporaryDetach()V
 
+    invoke-static {p0, v3}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeHoldViewBackground(Landroid/widget/AbsListView;Landroid/view/View;)V
+
     .end local v1    # "params":Landroid/widget/AbsListView$LayoutParams;
     .end local v3    # "transientView":Landroid/view/View;
     :goto_0
@@ -9837,6 +9849,8 @@
 
     :cond_6
     invoke-static {v10, v11}, Landroid/os/Trace;->traceEnd(J)V
+
+    invoke-static {p0, p1, v0}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeHoldViewBackground(Landroid/widget/AbsListView;ILandroid/view/View;)V
 
     move-object v3, v0
 
@@ -12994,6 +13008,18 @@
     .param p3, "longPressId"    # J
 
     .prologue
+    invoke-static/range {p0 .. p4}, Landroid/widget/AbsListView$FlymeInjector;->mzPerformLongPress(Landroid/widget/AbsListView;Landroid/view/View;IJ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_flyme_0
+
     const/4 v6, 0x1
 
     const/4 v7, 0x0
@@ -14297,6 +14323,10 @@
     .param p1, "choiceMode"    # I
 
     .prologue
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->setFlymeChoiceMode(Landroid/widget/AbsListView;I)I
+
+    move-result p1
+
     const/4 v1, 0x0
 
     iput p1, p0, Landroid/widget/AbsListView;->mChoiceMode:I
@@ -16500,7 +16530,7 @@
     .local v3, "absIncrementalDeltaY":I
     move/from16 v0, v25
 
-    if-lt v0, v3, :cond_11
+    if-le v0, v3, :cond_11
 
     move/from16 v0, v26
 

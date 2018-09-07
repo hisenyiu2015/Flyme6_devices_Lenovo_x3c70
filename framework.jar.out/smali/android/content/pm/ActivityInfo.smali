@@ -5,6 +5,13 @@
 # interfaces
 .implements Landroid/os/Parcelable;
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/content/pm/ActivityInfo$FlymeInjector;
+    }
+.end annotation
+
 
 # static fields
 

@@ -7427,6 +7427,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    invoke-direct/range {p0 .. p2}, Lcom/android/server/ConnectivityService;->isFlymeNetworkWithLinkPropertiesBlocked(Landroid/net/LinkProperties;I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_flyme_0
+
+    const/4 v6, 0x1
+
+    return v6
+
+    :cond_flyme_0
+
     const/4 v5, 0x2
 
     if-ne v2, v5, :cond_2

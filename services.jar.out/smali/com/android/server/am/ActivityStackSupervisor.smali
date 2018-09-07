@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;,
         Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityDisplay;,
         Lcom/android/server/am/ActivityStackSupervisor$ActivityDisplay;,
         Lcom/android/server/am/ActivityStackSupervisor$VirtualActivityContainer;,
@@ -10692,6 +10693,8 @@
     .param p5, "userId"    # I
 
     .prologue
+    invoke-static {p1, p5}, Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;->interceptAcquireGooglePlayServiceIntent(Landroid/content/Intent;I)V
+
     :try_start_0
     invoke-static {}, Landroid/app/AppGlobals;->getPackageManager()Landroid/content/pm/IPackageManager;
 
@@ -13860,6 +13863,28 @@
     .line 1689
     .end local v28    # "e":Landroid/os/RemoteException;
     :cond_1f
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p2
+
+    move-object/from16 v2, p4
+
+    move/from16 v3, p11
+
+    invoke-static {v0, v1, v2, v3}, Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;->interceptForAccessControl(Lcom/android/server/am/ActivityStackSupervisor;Landroid/content/Intent;Landroid/content/pm/ActivityInfo;I)Landroid/content/pm/ActivityInfo;
+
+    move-result-object p4
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;->isIntercepted(Lcom/android/server/am/ActivityStackSupervisor;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/16 p21, 0x0
+
+    :cond_flyme_0
+
     new-instance v7, Lcom/android/server/am/ActivityRecord;
 
     move-object/from16 v0, p0
@@ -14296,6 +14321,27 @@
 
     .end local v14    # "aInfo":Landroid/content/pm/ActivityInfo;
     .local v32, "aInfo":Landroid/content/pm/ActivityInfo;
+
+    move-object/from16 v0, p0
+
+    move/from16 v1, p2
+
+    move-object/from16 v2, p3
+
+    move-object/from16 v4, v32
+
+    invoke-static {v0, v1, v2, v4}, Lcom/android/server/am/ActivityStackSupervisor$FlymeInjector;->changeMayInterceptPackage(Lcom/android/server/am/ActivityStackSupervisor;ILjava/lang/String;Landroid/content/pm/ActivityInfo;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_flyme_0
+
     move-object/from16 v30, p18
 
     .line 998

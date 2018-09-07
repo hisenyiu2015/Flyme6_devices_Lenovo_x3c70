@@ -6,6 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/notification/NotificationManagerService$FlymeExtNotificationManagerServiceInternal;,
+        Lcom/android/server/notification/NotificationManagerService$FlymeWakeUpScreenRunnable;,
         Lcom/android/server/notification/NotificationManagerService$11;,
         Lcom/android/server/notification/NotificationManagerService$PolicyAccess;,
         Lcom/android/server/notification/NotificationManagerService$StatusBarNotificationHolder;,
@@ -543,9 +545,9 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mBuzzBeepBlinked:Ljava/lang/Runnable;
 
-    new-instance v0, Lcom/android/server/notification/NotificationManagerService$6;
+    new-instance v0, Lcom/android/server/notification/NotificationManagerService$FlymeExtNotificationManagerServiceInternal;
 
-    invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$6;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
+    invoke-direct {v0, p0}, Lcom/android/server/notification/NotificationManagerService$FlymeExtNotificationManagerServiceInternal;-><init>(Lcom/android/server/notification/NotificationManagerService;)V
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mService:Landroid/os/IBinder;
 

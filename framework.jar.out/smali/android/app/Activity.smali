@@ -14,6 +14,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/Activity$FlymeInjector;,
         Landroid/app/Activity$HostCallbacks;,
         Landroid/app/Activity$TranslucentConversionListener;,
         Landroid/app/Activity$ManagedCursor;,
@@ -366,6 +367,8 @@
     iput-object v0, p0, Landroid/app/Activity;->mExitTransitionListener:Landroid/app/SharedElementCallback;
 
     iput-boolean v1, p0, Landroid/app/Activity;->mInitialized:Z
+
+    invoke-direct/range {p0 .. p0}, Landroid/app/Activity;->initFlymeExtraFields()V
 
     return-void
 .end method
@@ -5382,6 +5385,8 @@
 
     .end local v0    # "wm":Landroid/view/ViewManager;
     :cond_0
+    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInjector;->onStart(Landroid/app/Activity;)V
+
     invoke-direct {p0}, Landroid/app/Activity;->hookMakeVisibleForTintAndIconTheme()V
 
     iget-object v1, p0, Landroid/app/Activity;->mDecor:Landroid/view/View;
@@ -7707,6 +7712,8 @@
     iput-boolean v0, p0, Landroid/app/Activity;->mCalled:Z
 
     invoke-static {p0}, Lcom/lenovo/common/SecurityManagerUtils;->checkAppLockForTask(Landroid/app/Activity;)V
+
+    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInjector;->injectAccessControl(Landroid/app/Activity;)V
 
     return-void
 .end method

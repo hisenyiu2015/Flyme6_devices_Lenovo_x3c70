@@ -1537,9 +1537,13 @@
     :cond_7
     const/16 v9, -0x3e8
 
-    if-eq v8, v9, :cond_2
+    if-eq v8, v9, :cond_flyme_0
 
     iput v8, v4, Lcom/android/server/notification/RankingHelper$Record;->visibility:I
+
+    :cond_flyme_0
+
+    invoke-direct {p0, p1, v4}, Lcom/android/server/notification/RankingHelper;->readFlymeExtraFields(Lorg/xmlpull/v1/XmlPullParser;Lcom/android/server/notification/RankingHelper$Record;)V
 
     goto :goto_0
 

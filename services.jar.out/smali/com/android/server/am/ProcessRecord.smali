@@ -2558,6 +2558,8 @@
     iput-boolean v4, p0, Lcom/android/server/am/ProcessRecord;->killedByAm:Z
 
     :cond_1
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/am/ProcessRecord;->setFlymeKilledReason(Ljava/lang/String;)V
+
     invoke-static {v6, v7}, Landroid/os/Trace;->traceEnd(J)V
 
     :cond_2

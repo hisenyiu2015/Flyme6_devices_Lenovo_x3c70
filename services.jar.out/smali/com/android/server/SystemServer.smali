@@ -2427,13 +2427,13 @@
 
     iput-wide v4, v0, Lcom/android/server/SystemServer;->mStartTime:J
 
-    new-instance v71, Lcom/android/server/InputMethodManagerService;
+    new-instance v71, Lcom/android/server/MzInputMethodManagerService;
 
     move-object/from16 v0, v71
 
     move-object/from16 v1, v110
 
-    invoke-direct {v0, v3, v1}, Lcom/android/server/InputMethodManagerService;-><init>(Landroid/content/Context;Lcom/android/server/wm/WindowManagerService;)V
+    invoke-direct {v0, v3, v1}, Lcom/android/server/MzInputMethodManagerService;-><init>(Landroid/content/Context;Lcom/android/server/wm/WindowManagerService;)V
     :try_end_9
     .catch Ljava/lang/Throwable; {:try_start_9 .. :try_end_9} :catch_3
 
@@ -2748,11 +2748,11 @@
 
     iput-wide v4, v0, Lcom/android/server/SystemServer;->mStartTime:J
 
-    new-instance v80, Lcom/android/server/LockSettingsService;
+    new-instance v80, Lcom/android/server/FlymeExtLockSettingsService;
 
     move-object/from16 v0, v80
 
-    invoke-direct {v0, v3}, Lcom/android/server/LockSettingsService;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v3}, Lcom/android/server/FlymeExtLockSettingsService;-><init>(Landroid/content/Context;)V
     :try_end_10
     .catch Ljava/lang/Throwable; {:try_start_10 .. :try_end_10} :catch_8
 
@@ -2873,13 +2873,13 @@
 
     iput-wide v4, v0, Lcom/android/server/SystemServer;->mStartTime:J
 
-    new-instance v98, Lcom/android/server/statusbar/StatusBarManagerService;
+    new-instance v98, Lcom/android/server/statusbar/FlymeExtStatusBarManagerService;
 
     move-object/from16 v0, v98
 
     move-object/from16 v1, v110
 
-    invoke-direct {v0, v3, v1}, Lcom/android/server/statusbar/StatusBarManagerService;-><init>(Landroid/content/Context;Lcom/android/server/wm/WindowManagerService;)V
+    invoke-direct {v0, v3, v1}, Lcom/android/server/statusbar/FlymeExtStatusBarManagerService;-><init>(Landroid/content/Context;Lcom/android/server/wm/WindowManagerService;)V
     :try_end_12
     .catch Ljava/lang/Throwable; {:try_start_12 .. :try_end_12} :catch_9
 
@@ -2891,6 +2891,9 @@
     move-object/from16 v0, v98
 
     invoke-static {v4, v0}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
+
+    invoke-static {}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeStatusBarManagerService()V
+
     :try_end_13
     .catch Ljava/lang/Throwable; {:try_start_13 .. :try_end_13} :catch_40
 
@@ -3041,6 +3044,9 @@
     const-string v4, "network_management"
 
     invoke-static {v4, v7}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/SystemServer$FlymeInjector;->addNetworkManagementServiceFlyme(Lcom/android/server/SystemServer;)V
+
     :try_end_15
     .catch Ljava/lang/Throwable; {:try_start_15 .. :try_end_15} :catch_b
 
@@ -4956,6 +4962,8 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1d
+    goto/16 :goto_flyme_0
+
     if-nez v60, :cond_1e
 
     if-nez v55, :cond_1e
@@ -5043,6 +5051,7 @@
     .end local v41    # "atlas":Lcom/android/server/AssetAtlasService;
     .restart local v40    # "atlas":Lcom/android/server/AssetAtlasService;
     :cond_1e
+    :goto_flyme_0
     :goto_28
     if-nez v60, :cond_1f
 
@@ -5563,6 +5572,15 @@
     check-cast v84, Lcom/android/server/MmsServiceBroker;
 
     .restart local v84    # "mmsService":Lcom/android/server/MmsServiceBroker;
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v4, v110
+
+    move-object/from16 v5, v107
+
+    invoke-static {v0, v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wallpaper/WallpaperManagerService;)V
+
     :try_start_43
     invoke-virtual/range {v104 .. v104}, Lcom/android/server/VibratorService;->systemReady()V
     :try_end_43

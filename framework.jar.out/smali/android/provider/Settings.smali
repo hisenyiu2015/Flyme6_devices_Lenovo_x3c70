@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/provider/Settings$ShareList;,
         Landroid/provider/Settings$Bookmarks;,
         Landroid/provider/Settings$Global;,
         Landroid/provider/Settings$Secure;,
@@ -585,6 +586,18 @@
 
     .line 8694
     :pswitch_2
+    invoke-static/range {p4 .. p4}, Landroid/provider/Settings;->isFlymePermissionGranted(I)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_flyme_0
+
+    const/4 v8, 0x1
+
+    return v8
+
+    :cond_flyme_0
+
     move-object v1, p5
 
     .local v1, "arr$":[Ljava/lang/String;

@@ -259,7 +259,7 @@
     iget-object v3, p0, Landroid/app/Notification$Style;->mBuilder:Landroid/app/Notification$Builder;
 
     # invokes: Landroid/app/Notification$Builder;->applyStandardTemplateWithActions(I)Landroid/widget/RemoteViews;
-    invoke-static {v3, p1}, Landroid/app/Notification$Builder;->access$900(Landroid/app/Notification$Builder;I)Landroid/widget/RemoteViews;
+    invoke-virtual {v3, p1}, Landroid/app/Notification$Builder;->applyStandardTemplateWithActionsFlyme(I)Landroid/widget/RemoteViews;
 
     move-result-object v0
 

@@ -6,6 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/WallpaperManager$FLYME_WALLPAPER_TYPE;,
+        Landroid/app/WallpaperManager$FlymeInjector;,
         Landroid/app/WallpaperManager$1;,
         Landroid/app/WallpaperManager$Globals;,
         Landroid/app/WallpaperManager$FastBitmapDrawable;
@@ -2378,6 +2380,20 @@
     .end annotation
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    invoke-direct {v0}, Ljava/io/IOException;-><init>()V
+
+    throw v0
+
+    :cond_flyme_0
+
     sget-object v3, Landroid/app/WallpaperManager;->sGlobals:Landroid/app/WallpaperManager$Globals;
 
     # getter for: Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
@@ -2742,6 +2758,20 @@
     .end annotation
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    invoke-direct {v0}, Ljava/io/IOException;-><init>()V
+
+    throw v0
+
+    :cond_flyme_0
+
     sget-object v4, Landroid/app/WallpaperManager;->sGlobals:Landroid/app/WallpaperManager$Globals;
 
     # getter for: Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
@@ -2902,6 +2932,20 @@
     .end annotation
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    new-instance v0, Ljava/io/IOException;
+
+    invoke-direct {v0}, Ljava/io/IOException;-><init>()V
+
+    throw v0
+
+    :cond_flyme_0
+
     sget-object v3, Landroid/app/WallpaperManager;->sGlobals:Landroid/app/WallpaperManager$Globals;
 
     # getter for: Landroid/app/WallpaperManager$Globals;->mService:Landroid/app/IWallpaperManager;
@@ -3023,6 +3067,18 @@
     .param p1, "name"    # Landroid/content/ComponentName;
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/app/WallpaperManager$FlymeInjector;->isFlymeChildrenMode(Landroid/app/WallpaperManager;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_flyme_0
+
     const/4 v0, 0x0
 
     .line 1119

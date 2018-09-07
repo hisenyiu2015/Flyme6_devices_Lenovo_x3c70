@@ -15,6 +15,17 @@
 
 
 # static fields
+.field private mFlymeArrayList:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field static final ACTIVITY_INACTIVE_RESET_TIME:J = 0x0L
 
 .field private static final DEBUG_OPTIMIZE:Z = true

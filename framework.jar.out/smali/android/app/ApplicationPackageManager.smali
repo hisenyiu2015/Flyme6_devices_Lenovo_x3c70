@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/ApplicationPackageManager$FlymeInjector;,
         Landroid/app/ApplicationPackageManager$OnPermissionsChangeListenerDelegate;,
         Landroid/app/ApplicationPackageManager$MoveCallbackDelegate;,
         Landroid/app/ApplicationPackageManager$ResourceName;
@@ -2873,6 +2874,12 @@
     .locals 2
 
     .prologue
+    invoke-static {}, Landroid/app/ApplicationPackageManager$FlymeInjector;->getFlymeDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    goto :goto_0
+
     iget-object v0, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
 
     if-eqz v0, :cond_0

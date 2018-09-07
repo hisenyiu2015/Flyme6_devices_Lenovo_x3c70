@@ -20,6 +20,8 @@
 
 
 # instance fields
+.field mWindowStateExt:Lcom/android/server/wm/WindowStateExt;
+
 .field private isSinglehandSupport:Z
 
 .field mAppFreezing:Z
@@ -1328,6 +1330,8 @@
     invoke-direct {v13, v12, p0, v14}, Lcom/android/server/input/InputWindowHandle;-><init>(Lcom/android/server/input/InputApplicationHandle;Ljava/lang/Object;I)V
 
     iput-object v13, p0, Lcom/android/server/wm/WindowState;->mInputWindowHandle:Lcom/android/server/input/InputWindowHandle;
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowState$FlymeInjector;->initFlymeExtraFields(Lcom/android/server/wm/WindowState;)V
 
     goto/16 :goto_8
 

@@ -259,6 +259,8 @@
     .line 175
     .end local v10    # "written":Z
     :cond_7
+    invoke-direct {p0, v7}, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->notifyFlymeLockWallpaperChanged(Ljava/io/File;)V
+
     monitor-exit v11
 
     goto :goto_0

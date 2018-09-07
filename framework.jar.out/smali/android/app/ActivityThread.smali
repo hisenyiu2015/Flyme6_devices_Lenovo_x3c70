@@ -6,6 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/ActivityThread$FlymeApplicationThread;,
+        Landroid/app/ActivityThread$FlymeInjector;,
         Landroid/app/ActivityThread$QueryHistory;,
         Landroid/app/ActivityThread$QueryHistoryRecord;,
         Landroid/app/ActivityThread$DropBoxReporter;,
@@ -376,7 +378,7 @@
 
     new-instance v0, Landroid/app/ActivityThread$FlymeApplicationThread;
 
-    invoke-direct {v0, p0, v1}, Landroid/app/ActivityThread$ApplicationThread;-><init>(Landroid/app/ActivityThread;Landroid/app/ActivityThread$1;)V
+    invoke-direct {v0, p0}, Landroid/app/ActivityThread$FlymeApplicationThread;-><init>(Landroid/app/ActivityThread;)V
 
     iput-object v0, p0, Landroid/app/ActivityThread;->mAppThread:Landroid/app/ActivityThread$ApplicationThread;
 
@@ -9003,6 +9005,8 @@
     .param p5, "dontReport"    # Z
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/app/ActivityThread$FlymeInjector;->handleFlymePauseActivity(Landroid/app/ActivityThread;)V
+
     iget-object v1, p0, Landroid/app/ActivityThread;->mActivities:Landroid/util/ArrayMap;
 
     invoke-virtual {v1, p1}, Landroid/util/ArrayMap;->get(Ljava/lang/Object;)Ljava/lang/Object;

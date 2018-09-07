@@ -3903,6 +3903,8 @@
     and-int/lit8 p3, p3, -0x5
 
     :cond_0
+    goto :goto_flyme_0
+
     invoke-direct {p0, v8}, Lcom/android/server/audio/AudioService;->isScreenOffCalling(I)Z
 
     move-result v0
@@ -3935,6 +3937,8 @@
 
     .line 1317
     :cond_1
+    :goto_flyme_0
+
     const-string v0, "AudioService"
 
     new-instance v2, Ljava/lang/StringBuilder;

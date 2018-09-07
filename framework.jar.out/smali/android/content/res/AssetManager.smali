@@ -136,6 +136,8 @@
 
     invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
 
+    invoke-direct/range {p0 .. p0}, Landroid/content/res/AssetManager;->addFlymeAssetPath()V
+
     monitor-exit p0
 
     return-void
@@ -184,6 +186,8 @@
     const-string v0, "/system/framework/lenovo-res/lenovo-res.apk"
 
     invoke-virtual {p0, v0}, Landroid/content/res/AssetManager;->addAssetPath(Ljava/lang/String;)I
+
+    invoke-direct/range {p0 .. p0}, Landroid/content/res/AssetManager;->addFlymeAssetPath()V
 
     return-void
 .end method

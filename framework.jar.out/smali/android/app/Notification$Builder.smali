@@ -334,6 +334,8 @@
     .line 2205
     .end local v4    # "styleClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Notification$Style;>;"
     :cond_0
+    invoke-direct/range {p0 .. p0}, Landroid/app/Notification$Builder;->initFlymeExtraFields()V
+
     :goto_0
     return-void
 

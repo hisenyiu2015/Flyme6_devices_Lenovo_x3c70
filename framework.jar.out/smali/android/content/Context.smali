@@ -215,6 +215,18 @@
 
 
 # instance fields
+.field private mFlymeColorThemeCacheMap:Ljava/util/HashMap;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/HashMap",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private mRomUIVersion:I
 
 
