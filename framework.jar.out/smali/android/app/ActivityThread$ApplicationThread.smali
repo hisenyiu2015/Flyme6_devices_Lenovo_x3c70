@@ -42,10 +42,9 @@
     return-void
 .end method
 
-.method synthetic constructor <init>(Landroid/app/ActivityThread;Landroid/app/ActivityThread$1;)V
+.method synthetic constructor <init>(Landroid/app/ActivityThread;Landroid/app/ActivityThread$ApplicationThread;)V
     .locals 0
-    .param p1, "x0"    # Landroid/app/ActivityThread;
-    .param p2, "x1"    # Landroid/app/ActivityThread$1;
+    .param p1, "this$0"    # Landroid/app/ActivityThread;
 
     .prologue
     .line 591
