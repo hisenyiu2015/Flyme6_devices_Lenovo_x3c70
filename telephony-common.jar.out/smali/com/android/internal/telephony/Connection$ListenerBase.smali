@@ -92,12 +92,28 @@
     return-void
 .end method
 
+.method public onLocalVideoCapabilityChanged(Z)V
+    .locals 0
+    .param p1, "capable"    # Z
+
+    .prologue
+    return-void
+.end method
+
 .method public onMultipartyStateChanged(Z)V
     .locals 0
     .param p1, "isMultiParty"    # Z
 
     .prologue
     .line 90
+    return-void
+.end method
+
+.method public onRemoteVideoCapabilityChanged(Z)V
+    .locals 0
+    .param p1, "capable"    # Z
+
+    .prologue
     return-void
 .end method
 
