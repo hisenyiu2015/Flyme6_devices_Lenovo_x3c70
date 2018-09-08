@@ -1823,8 +1823,6 @@
 
     move-result-object v4
 
-    invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService;->notifyFlymeWakeupScreen(Lcom/android/server/notification/NotificationRecord;)V
-
     move-object/from16 v0, p0
 
     move-object/from16 v1, v28
@@ -2334,6 +2332,8 @@
 
     .line 2653
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->updateLightsLocked()V
+
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/notification/NotificationManagerService;->notifyFlymeWakeupScreen(Lcom/android/server/notification/NotificationRecord;)V
 
     .line 2654
     move-object/from16 v0, p0
